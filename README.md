@@ -4,13 +4,13 @@
 **Type:** Product & UX concept (problem → workflow → screens)  
 **Apps covered:** Instacart · Walmart · Amazon Fresh · Uber Eats grocery · DoorDash grocery
 
-🔗 **Interactive design canvas:** https://claude.ai/artifact/7XVBsAwTmCwaYPSDdUGTJX
-
 > This is a concept. It is not affiliated with or endorsed by any of the companies named.
 
 ---
 
 ## 1. The problem
+
+![The problem](images/00-problem.png)
 
 People are told by their doctor to change how they eat, but grocery delivery apps give them no way to shop for it.
 
@@ -42,6 +42,8 @@ People are told by their doctor to change how they eat, but grocery delivery app
 
 ## 2. The solution: one workflow in every app
 
+![Workflow](images/01-workflow.png)
+
 | Step | User does | System does | Solves |
 |---|---|---|---|
 | **1. Set goals once** | Picks goals, adds allergies per household member, can import lab results | Converts goals into per-serving limits | #3, #7 |
@@ -59,6 +61,8 @@ People are told by their doctor to change how they eat, but grocery delivery app
 
 The user can edit every limit. Raw lab numbers are deleted after this step.
 
+![Step 1 setup](images/flow-setup.png)
+
 ---
 
 ## 3. App-by-app workflow
@@ -66,6 +70,9 @@ The user can edit every limit. Raw lab numbers are deleted after this step.
 Each app gets the same 5-step workflow. What changes is the moment where that app currently breaks trust.
 
 ### Instacart: protect the substitution
+
+![Instacart workflow](images/flow-ic.png)
+
 - **Problem:** a personal shopper picks replacements by category, not by sugar or allergens.
 - **Step 2:** "Fits my goals" search filter. Example: 24 yogurt results → 8 fit, 13 ranked lower (12–19g added sugar), 3 hidden (contain almonds).
 - **Step 3:** Cart check plus a per-item "if out of stock" rule (best goal-safe match / specific item / refund).
@@ -73,6 +80,9 @@ Each app gets the same 5-step workflow. What changes is the moment where that ap
 - **Measure:** replacement approval rate ↑, wrong-substitution refunds ↓.
 
 ### Walmart: healthy within budget
+
+![Walmart workflow](images/flow-wm.png)
+
 - **Problem:** healthy food feels expensive, and budget shoppers can't afford to guess.
 - **Step 2:** Type a plain list ("bread, cereal, rice…"); each word maps to the cheapest product that fits.
 - **Step 3:** Swaps that are healthier *and* cheaper. Example: frosted cereal $3.48 → store-brand toasted oats $1.98 (12g → 1g added sugar).
@@ -80,6 +90,9 @@ Each app gets the same 5-step workflow. What changes is the moment where that ap
 - **Measure:** swap acceptance ↑, share of cart that fits ↑, basket size flat or ↓.
 
 ### Amazon Fresh: update what repeats
+
+![Amazon Fresh workflow](images/flow-az.png)
+
 - **Problem:** health changed, but reorders didn't.
 - **Step 2:** "Buy again" re-checked against current goals, with a fitting version next to each item.
 - **Step 3:** A goal change triggers a one-time subscription review before the next order locks.
@@ -87,6 +100,9 @@ Each app gets the same 5-step workflow. What changes is the moment where that ap
 - **Measure:** subscriptions updated within 7 days of a goal change ↑, cancellations ↓.
 
 ### Uber Eats grocery: one profile for food and grocery
+
+![Uber Eats grocery workflow](images/flow-ue.png)
+
 - **Problem:** restaurant and grocery orders live in one app but aren't connected by health goals.
 - **Step 2:** The same profile works on Restaurants and Grocery; stores are ranked by % of catalog that fits.
 - **Step 3:** "Balance your week" suggests easy lunches after several takeout dinners (opt-in use of order history).
@@ -94,6 +110,9 @@ Each app gets the same 5-step workflow. What changes is the moment where that ap
 - **Measure:** grocery orders from restaurant-only users ↑, bundle add rate ↑.
 
 ### DoorDash grocery: safe impulse orders
+
+![DoorDash grocery workflow](images/flow-dd.png)
+
 - **Problem:** fast, late-night orders leave no time to check labels.
 - **Step 2:** Allergy filters on by default, including "may contain", with a count of hidden items.
 - **Step 3:** One-line safety check before paying; an allergy note is sent to the Dasher.
@@ -129,12 +148,17 @@ Each app gets the same 5-step workflow. What changes is the moment where that ap
 
 ---
 
-## 6. What's in the design canvas
+## 6. Screens in this repo
 
-| Page | Contents |
+All images are in [`images/`](images/).
+
+| File | What it shows |
 |---|---|
-| 0 · Problem & workflow | Problem board, 5-step workflow, Step 1 setup screens (goals, lab results → limits, allergies & household) |
-| 1–5 · One page per app | Problem panel, then three phone screens for steps 2–4, each with "User / System / Solves" notes |
+| `00-problem.png` | Problem, scale, personas, 7 pain points |
+| `01-workflow.png` | The 5-step workflow, guardrails, how to read the screens |
+| `flow-setup.png` | Step 1 setup: goals, lab results → limits, allergies |
+| `flow-ic/wm/az/ue/dd.png` | Each app: problem + steps 2–4 side by side |
+| `<app>-0..3-*.png` | Each screen on its own (ic = Instacart, wm = Walmart, az = Amazon Fresh, ue = Uber Eats, dd = DoorDash) |
 
 On every screen, new features are outlined with a blue dashed border and a **NEW** tag.
 
